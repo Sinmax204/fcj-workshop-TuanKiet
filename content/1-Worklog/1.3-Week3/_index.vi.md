@@ -1,59 +1,43 @@
 ---
-title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký công việc Tuần 3"
+date: 2026-05-01
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 3
 
-### Mục tiêu tuần 3:
+* Hiểu các kiến thức cơ bản về Amazon Simple Storage Service (Amazon S3).
+* Tìm hiểu cách tạo và quản lý Bucket, Object trong Amazon S3.
+* Cấu hình quyền truy cập và chính sách bảo mật cho Amazon S3.
+* Thực hành triển khai một website tĩnh bằng Amazon S3.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Công việc thực hiện trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| ----- | --------- | ------------ | --------------- | ------------------ |
+| 1 | Tìm hiểu các khái niệm cơ bản của Amazon S3 như Bucket, Object, Object Key và các lớp lưu trữ (Storage Classes). | 01/05/2026 | 01/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 2 | Tạo một Amazon S3 Bucket và thực hành tải lên, tải xuống, đổi tên và xóa các Object. | 02/05/2026 | 02/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | Tìm hiểu Bucket Policy, IAM Policy và Access Control List (ACL) để quản lý quyền truy cập Amazon S3. | 03/05/2026 | 03/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | Bật tính năng Versioning cho Bucket và thực hành khôi phục các phiên bản trước của Object. | 04/05/2026 | 04/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | Cấu hình Amazon S3 để lưu trữ Website tĩnh (Static Website Hosting) và triển khai các tệp website. | 05/05/2026 | 05/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | Ôn tập kiến thức về Amazon S3 và hoàn thành các bài thực hành (Lab) của tuần. | 06/05/2026 | 06/05/2026 | https://cloudjourney.awsstudygroup.com/ |
 
+### Kết quả đạt được
 
-### Kết quả đạt được tuần 3:
+* Hiểu được kiến trúc và các khái niệm cơ bản của Amazon S3.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tạo và quản lý thành công các Amazon S3 Bucket.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Thực hiện được các thao tác tải lên, tải xuống, đổi tên và xóa Object trong Amazon S3.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Hiểu và cấu hình được Bucket Policy, IAM Policy và quyền truy cập cho Amazon S3.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Bật và sử dụng tính năng Versioning để quản lý các phiên bản của Object.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Triển khai thành công một Website tĩnh bằng Amazon S3.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Hoàn thành đầy đủ các bài thực hành (Lab) của Tuần 3.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Nâng cao kỹ năng sử dụng dịch vụ lưu trữ Amazon S3 và quản lý dữ liệu trên nền tảng AWS.

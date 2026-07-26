@@ -1,125 +1,139 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Sự kiện 1"
+date: 2026-05-30
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Báo cáo tham dự sự kiện: AWS Student Builder Group Meetup – Build Voice Agent
 
-### Mục Đích Của Sự Kiện
+## Thông tin sự kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- **Tên sự kiện:** AWS Student Builder Group Meetup – Build Voice Agent
+- **Thời gian:** 09:00, Thứ Bảy ngày 30/05/2026
+- **Địa điểm:** Văn phòng AWS Việt Nam, Tầng 26, Bitexco Financial Tower, Thành phố Hồ Chí Minh
+- **Vai trò:** Người tham dự
 
-### Danh Sách Diễn Giả
+---
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+## Mục tiêu sự kiện
 
-### Nội Dung Nổi Bật
+Sự kiện được tổ chức nhằm giới thiệu các công nghệ AI Agent hiện đại trên nền tảng AWS và chia sẻ kinh nghiệm xây dựng các ứng dụng Voice AI trong thực tế.
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+Các nội dung chính bao gồm:
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+- Giới thiệu khái niệm AI Agent và Voice Agent.
+- Tìm hiểu Amazon Bedrock AgentCore.
+- Xây dựng kiến trúc Voice Agent trên AWS.
+- Chia sẻ các kinh nghiệm triển khai và mở rộng hệ thống AI Agent.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+---
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+## Nội dung chính
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+### 1. Tổng quan về Voice AI
 
-#### Domain-Driven Design (DDD)
+Diễn giả giới thiệu xu hướng phát triển của các hệ thống Voice AI và AI Agent trong những năm gần đây.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+Thông qua các ví dụ thực tế, người tham dự hiểu rõ hơn về cách một Voice Agent tiếp nhận giọng nói của người dùng, xử lý ngôn ngữ tự nhiên và tạo ra phản hồi phù hợp.
 
-#### Event-Driven Architecture
+---
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+### 2. Amazon Bedrock AgentCore
 
-#### Compute Evolution
+Một trong những nội dung nổi bật của chương trình là Amazon Bedrock AgentCore.
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+Diễn giả trình bày cách xây dựng AI Agent dựa trên các Foundation Models của Amazon Bedrock, giúp tự động hóa quy trình xử lý nghiệp vụ và hỗ trợ người dùng thông qua hội thoại.
 
-#### Amazon Q Developer
+Ngoài ra, Bedrock AgentCore còn cho phép tích hợp với nhiều dịch vụ AWS khác để xây dựng các ứng dụng AI hiện đại.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+---
 
-### Những Gì Học Được
+### 3. Kiến trúc Voice Agent trên AWS
 
-#### Tư Duy Thiết Kế
+Buổi chia sẻ cũng giới thiệu kiến trúc tham khảo của một hệ thống Voice Agent sử dụng các dịch vụ AWS như:
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- Amazon API Gateway
+- AWS Lambda
+- Amazon Bedrock
+- Amazon DynamoDB
+- Amazon S3
+- Amazon CloudWatch
 
-#### Kiến Trúc Kỹ Thuật
+Thông qua kiến trúc này, mình hiểu rõ hơn cách xây dựng một ứng dụng AI theo mô hình Serverless, có khả năng mở rộng và dễ dàng quản lý.
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+---
 
-#### Chiến Lược Hiện Đại Hóa
+### 4. Kinh nghiệm triển khai thực tế
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+Diễn giả chia sẻ nhiều kinh nghiệm hữu ích khi triển khai AI Agent trong môi trường Production, bao gồm:
 
-### Ứng Dụng Vào Công Việc
+- Thiết kế kiến trúc theo hướng Cloud Native.
+- Xây dựng AI Agent theo từng chức năng độc lập.
+- Giám sát hệ thống bằng Amazon CloudWatch.
+- Tối ưu chi phí bằng các dịch vụ Serverless.
+- Thiết kế hệ thống có khả năng mở rộng khi số lượng người dùng tăng cao.
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+---
 
-### Trải nghiệm trong event
+## Kiến thức tiếp thu
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+Sau khi tham dự sự kiện, mình học được nhiều kiến thức thực tế như:
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+- Hiểu rõ hơn về AI Agent và Voice AI.
+- Biết cách sử dụng Amazon Bedrock AgentCore để xây dựng ứng dụng AI.
+- Hiểu kiến trúc Serverless khi kết hợp AWS Lambda với các dịch vụ AI.
+- Biết cách thiết kế ứng dụng Cloud Native trên nền tảng AWS.
+- Nắm được các kinh nghiệm triển khai và vận hành hệ thống AI trong thực tế.
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+---
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+## Áp dụng vào công việc
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+Những kiến thức từ sự kiện có thể áp dụng vào các dự án trong tương lai như:
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+- Xây dựng chatbot hoặc Voice Agent sử dụng Amazon Bedrock.
+- Thiết kế Backend theo mô hình Serverless với AWS Lambda.
+- Giám sát hệ thống bằng Amazon CloudWatch.
+- Thiết kế các ứng dụng có khả năng mở rộng trên nền tảng AWS.
+- Ứng dụng AI vào các hệ thống quản lý và chăm sóc khách hàng.
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+---
+
+## Trải nghiệm tham dự
+
+Tham gia AWS Student Builder Group Meetup là một trải nghiệm rất bổ ích đối với mình.
+
+Thông qua các phần trình bày của diễn giả, mình có cơ hội tiếp cận những xu hướng mới về Generative AI và cách AWS đang hỗ trợ doanh nghiệp xây dựng các AI Agent hiện đại.
+
+Bên cạnh kiến thức chuyên môn, sự kiện còn tạo điều kiện để mình giao lưu với các bạn sinh viên, kỹ sư và những người đang học tập, làm việc trong lĩnh vực Cloud Computing. Việc trao đổi kinh nghiệm với cộng đồng AWS giúp mình có thêm nhiều góc nhìn thực tế cũng như định hướng rõ hơn cho việc học và phát triển nghề nghiệp.
+
+Sau sự kiện, mình hiểu rõ hơn về vai trò của Amazon Bedrock, kiến trúc Voice AI và cách kết hợp các dịch vụ AWS để xây dựng những ứng dụng AI có khả năng mở rộng và dễ dàng triển khai trong thực tế.
+
+---
+
+## Hình ảnh tại sự kiện
+
+### Hình ảnh trước khi chương trình bắt đầu
+
+<p align="center">
+<img src="/Sinmax204/fcj-workshop-TuanKiet/images/4-EventParticipated/event1.jpg" width="80%">
+</p>
+
+<p align="center">
+<i>Hình 4.1. Người tham dự tập trung tại văn phòng AWS Việt Nam trước khi chương trình bắt đầu.</i>
+</p>
+
+### Hình ảnh trong buổi chia sẻ
+
+<p align="center">
+<img src="/Sinmax204/fcj-workshop-TuanKiet/images/4-EventParticipated/event1.jpg" width="80%">
+</p>
+
+<p align="center">
+<i>Hình 4.2. Diễn giả giới thiệu về Build Voice Agent và Amazon Bedrock AgentCore trong chương trình AWS Student Builder Group Meetup.</i>
+</p>
+
+> Nhìn chung, sự kiện không chỉ giúp mình cập nhật các xu hướng mới về Generative AI và AI Agent trên AWS mà còn mang lại nhiều kinh nghiệm thực tế trong việc thiết kế, triển khai và vận hành các ứng dụng Cloud hiện đại.

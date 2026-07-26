@@ -1,115 +1,205 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-04-17
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+
+# Smart Health Management System
+
+## A Scalable and Highly Available Healthcare Platform on AWS
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
 
-### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+The Smart Health Management System is a cloud-based healthcare platform designed to simplify medical record management, appointment scheduling, and healthcare service delivery. The application is deployed on Amazon Web Services (AWS) using a highly available and scalable architecture following the AWS Well-Architected Framework.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+The frontend is developed with React and hosted on Amazon S3, while Amazon CloudFront accelerates content delivery worldwide. Backend services run on Amazon EC2 instances managed by an Auto Scaling Group behind an Application Load Balancer. Amazon RDS PostgreSQL stores application data, and Amazon ElastiCache for Redis improves system performance through caching. AWS CloudWatch provides monitoring, while AWS Lambda, Amazon SQS, Amazon SNS, and Amazon SES support asynchronous processing and notification services.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+---
 
-### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+## 2. Problem Statement
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+### Current Challenges
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+Many healthcare management systems are still deployed on a single server or traditional infrastructure, resulting in several limitations:
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+- Limited scalability during peak usage.
+- Single point of failure.
+- Slow response time under heavy workloads.
+- Difficult monitoring and maintenance.
+- Insufficient protection against common web attacks.
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+### Proposed Solution
 
-### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+The Smart Health Management System leverages AWS cloud services to provide:
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+- High availability using Auto Scaling Group and Application Load Balancer.
+- Fast global content delivery through Amazon CloudFront.
+- Secure web application protection using AWS WAF.
+- Reliable relational database with Amazon RDS PostgreSQL.
+- High-performance caching using Amazon ElastiCache for Redis.
+- Centralized monitoring and logging using Amazon CloudWatch.
+- Event-driven processing with AWS Lambda, Amazon SQS, Amazon SNS, and Amazon SES.
 
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+---
 
-### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
+## 3. Solution Architecture
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+The system architecture consists of multiple AWS services working together to provide scalability, security, and reliability.
 
-Total: $0.7/month, $8.40/12 months
+### Architecture Overview
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+The user accesses the Smart Health website through Amazon Route 53. Static web resources are delivered by Amazon CloudFront, protected by AWS WAF, and served from Amazon S3.
 
-### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+API requests are forwarded to an Application Load Balancer, which distributes traffic across multiple Amazon EC2 instances running inside private subnets. Auto Scaling automatically launches or terminates EC2 instances based on system load.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+Application data is stored in Amazon RDS PostgreSQL, while frequently accessed data is cached in Amazon ElastiCache for Redis to reduce database workload.
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+Supporting services such as AWS Lambda, Amazon SQS, Amazon SNS, and Amazon SES handle background jobs, notifications, and asynchronous processing. Amazon CloudWatch continuously monitors the entire infrastructure.
 
-### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+### Architecture Diagram
+
+![System Architecture](/Sinmax204/fcj-workshop-TuanKiet/images/2-Proposal/system-architecture.jpg)
+---
+
+## AWS Services Used
+
+| Service | Purpose |
+|---------|---------|
+| Amazon Route 53 | Domain Name System (DNS) |
+| Amazon CloudFront | Global Content Delivery Network |
+| AWS WAF | Web Application Firewall |
+| Amazon S3 | Host React frontend and application files |
+| Application Load Balancer | Traffic distribution |
+| Amazon EC2 | Backend application servers |
+| Auto Scaling Group | Automatic scaling |
+| Amazon RDS PostgreSQL | Relational database |
+| Amazon ElastiCache (Redis) | In-memory cache |
+| AWS Lambda | Background processing |
+| Amazon SQS FIFO | Message queue |
+| Amazon SNS | Notification service |
+| Amazon SES | Email service |
+| Amazon CloudWatch | Monitoring and logging |
+| Gateway VPC Endpoint | Secure private S3 access |
+| Amazon VPC | Network isolation |
+
+---
+
+## 4. Technical Implementation
+
+### Phase 1 – Infrastructure Planning
+
+- Design the AWS architecture.
+- Configure VPC, subnets, route tables, and security groups.
+- Prepare IAM roles and permissions.
+
+### Phase 2 – Core Infrastructure Deployment
+
+- Deploy Amazon EC2 instances.
+- Configure Auto Scaling Group.
+- Configure Application Load Balancer.
+- Deploy Amazon RDS PostgreSQL.
+- Configure Amazon ElastiCache.
+
+### Phase 3 – Frontend Deployment
+
+- Build the React application.
+- Upload static files to Amazon S3.
+- Configure Amazon CloudFront.
+- Configure HTTPS using AWS Certificate Manager.
+- Configure Route 53 DNS.
+
+### Phase 4 – Monitoring and Event Processing
+
+- Configure Amazon CloudWatch dashboards and alarms.
+- Deploy AWS Lambda functions.
+- Configure Amazon SQS FIFO queues.
+- Configure Amazon SNS notifications.
+- Configure Amazon SES email service.
+
+### Phase 5 – Testing and Deployment
+
+- Perform functional testing.
+- Conduct performance testing.
+- Optimize infrastructure.
+- Complete project documentation.
+- Deploy the production environment.
+
+---
+
+## 5. Timeline & Milestones
+
+| Week | Activities |
+|------|------------|
+| Week 1 | AWS Fundamentals and EC2 |
+| Week 2 | Amazon VPC |
+| Week 3 | Amazon S3 |
+| Week 4 | Amazon RDS |
+| Week 5 | AWS Lambda |
+| Week 6 | Amazon CloudWatch |
+| Week 7 | AWS IAM |
+| Week 8 | Amazon ECS & Amazon ECR |
+| Week 9 | AWS CloudFormation |
+| Week 10 | AWS CI/CD |
+| Week 11 | Route 53 and Elastic Load Balancer |
+| Week 12 | Smart Health System Deployment and Final Presentation |
+
+---
+
+## 6. Budget Estimation
+
+The project primarily utilizes AWS Free Tier resources during development.
+
+Estimated AWS services include:
+
+- Amazon EC2
+- Amazon RDS PostgreSQL
+- Amazon S3
+- Amazon CloudFront
+- Amazon Route 53
+- AWS WAF
+- Amazon ElastiCache
+- AWS Lambda
+- Amazon CloudWatch
+- Amazon SQS
+- Amazon SNS
+- Amazon SES
+
+Actual costs depend on resource consumption after exceeding AWS Free Tier limits.
+
+---
+
+## 7. Risk Assessment
+
+### Potential Risks
+
+- EC2 instance failure.
+- Database failure.
+- Traffic spikes.
+- Unexpected AWS costs.
+- Security attacks.
+
+### Mitigation Strategy
+
+- Enable Auto Scaling Group.
+- Configure Application Load Balancer.
+- Enable automatic RDS backups.
+- Deploy AWS WAF.
+- Configure CloudWatch alarms.
+- Enable AWS Budgets and billing alerts.
+
+---
+
+## 8. Expected Outcomes
+
+Upon completion, the project will deliver:
+
+- A fully functional Smart Health Management System running on AWS.
+- High availability with automatic scaling.
+- Secure and reliable infrastructure.
+- Faster application performance through Redis caching.
+- Real-time monitoring using Amazon CloudWatch.
+- Practical experience in designing, deploying, and managing enterprise cloud infrastructure on AWS.

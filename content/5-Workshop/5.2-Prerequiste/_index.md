@@ -1,242 +1,122 @@
 ---
-title : "Prerequiste"
-date : 2024-01-01 
-weight : 2 
-chapter : false
-pre : " <b> 5.2. </b> "
+title: "Prerequisite"
+date: 2026-07-01
+weight: 2
+chapter: false
+pre: " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
-Add the following IAM permission policy to your user account to deploy and cleanup this workshop.
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+# Prerequisite
 
-```
+Before starting the workshop, the AWS environment must be prepared and the required permissions must be granted to deploy the infrastructure used throughout the lab.
 
-#### Provision resources using CloudFormation
+---
 
-In this lab, we will use **N.Virginia region (us-east-1)**.
+## IAM Permissions
 
-To prepare the workshop environment, deploy this **CloudFormation Template** (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Accept all of the defaults when deploying the template. 
+To create and remove the AWS resources used in this workshop, the AWS account must have an **IAM Policy** with sufficient permissions.
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+The policy grants access to several AWS services, including:
 
-+ Tick 2 acknowledgement boxes
-+ Choose **Create stack**
+- Amazon EC2
+- Amazon VPC
+- AWS CloudFormation
+- Amazon S3
+- AWS Lambda
+- AWS Identity and Access Management (IAM)
+- Amazon Route 53
+- AWS Systems Manager (SSM)
+- Amazon CloudWatch
+- AWS Secrets Manager
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+After creating or updating the IAM policy, attach it to the IAM User or IAM Role that will be used during the workshop.
 
-The **ClouddFormation** deployment requires about 15 minutes to complete.
+> **Note:** The workshop policy grants broad permissions for learning purposes. In production environments, AWS recommends following the **Principle of Least Privilege** by granting only the permissions required for each workload.
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+---
 
-+ **2 VPCs** have been created
+## Deploying the Infrastructure with AWS CloudFormation
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+To simplify the setup process, this workshop uses **AWS CloudFormation** to automatically provision all required resources.
 
-+ **3 EC2s** have been created
+The workshop is deployed in the following AWS Region:
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+- **US East (N. Virginia) – us-east-1**
+
+Open the provided CloudFormation template and perform the following steps:
+
+1. Keep all default parameters.
+2. Acknowledge the required permissions.
+3. Choose **Create stack** to begin the deployment.
+
+<p align="center">
+<img src="/Sinmax204/fcj-workshop-TuanKiet/images/5-Workshop/5.2-Prerequisite/create-stack1.png" width="90%">
+</p>
+
+<p align="center">
+<i>Figure 5.2. Creating a CloudFormation stack.</i>
+</p>
+
+---
+
+Next, confirm the required acknowledgements and click **Create stack** to start provisioning the resources.
+
+<p align="center">
+<img src="/Sinmax204/fcj-workshop-TuanKiet/images/5-Workshop/5.2-Prerequisite/create-stack2.png" width="90%">
+</p>
+
+<p align="center">
+<i>Figure 5.3. Confirming the deployment and creating the CloudFormation stack.</i>
+</p>
+
+---
+
+## Completing the Deployment
+
+The CloudFormation deployment takes approximately **15 minutes** to complete.
+
+Once the stack status changes to **CREATE_COMPLETE**, the workshop environment is ready for use.
+
+<p align="center">
+<img src="/Sinmax204/fcj-workshop-TuanKiet/images/5-Workshop/5.2-Prerequisite/complete.png" width="90%">
+</p>
+
+<p align="center">
+<i>Figure 5.4. CloudFormation stack deployed successfully.</i>
+</p>
+
+---
+
+## Verifying the Provisioned Resources
+
+After the deployment is completed, CloudFormation automatically creates all resources required for the workshop.
+
+### Two Amazon VPCs
+
+Two Virtual Private Clouds (VPCs) are created to simulate both the AWS Cloud environment and an on-premises environment for hybrid networking.
+
+<p align="center">
+<img src="/Sinmax204/fcj-workshop-TuanKiet/images/5-Workshop/5.2-Prerequisite/vpcs.png" width="90%">
+</p>
+
+<p align="center">
+<i>Figure 5.5. Two Amazon VPCs created by CloudFormation.</i>
+</p>
+
+---
+
+### Three Amazon EC2 Instances
+
+CloudFormation also provisions three Amazon EC2 instances used to configure the VPN connection and verify private connectivity to Amazon S3 through a VPC Endpoint.
+
+<p align="center">
+<img src="/Sinmax204/fcj-workshop-TuanKiet/images/5-Workshop/5.2-Prerequisite/ec2.png" width="90%">
+</p>
+
+<p align="center">
+<i>Figure 5.6. Amazon EC2 instances created for the workshop.</i>
+</p>
+
+---
+
+After completing these steps, the workshop environment is fully prepared. The next sections will focus on configuring **Amazon VPC Endpoints**, **AWS Transit Gateway**, and **Site-to-Site VPN** to enable secure private connectivity between the simulated on-premises environment and AWS services.

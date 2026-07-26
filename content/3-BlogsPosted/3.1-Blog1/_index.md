@@ -1,31 +1,81 @@
 ---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-05-10
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
 
-Key points to know:
+# AWS Architecture Blog | What I Learned About Event-Driven Architecture with Amazon SQS and AWS Lambda
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+During my AWS learning journey, I realized that not every client request needs to be processed immediately. If every request is handled directly by the backend server, the application can easily become overloaded when traffic increases.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+AWS provides an effective Event-Driven Architecture by combining **Amazon API Gateway**, **Amazon SQS**, **AWS Lambda**, **Amazon DynamoDB**, **Amazon CloudWatch**, and **Amazon SNS**. This architecture improves scalability, reliability, and system flexibility.
 
-...Image...
+## Architecture Overview
 
-...Link...
+<p align="center">
+    <img src="/Sinmax204/fcj-workshop-TuanKiet/images/3-BlogsPosted/blog1.jpg" width="100%">
+</p>
 
-...Guide...
+<p align="center">
+<i>Figure 3.1. Event-Driven Architecture using Amazon API Gateway, Amazon SQS, AWS Lambda, DynamoDB, CloudWatch and Amazon SNS.</i>
+</p>
+
+---
+
+## 1. Amazon API Gateway Receives Client Requests
+
+When a client sends a request, Amazon API Gateway receives the HTTP request and immediately places a message into Amazon SQS instead of sending it directly to the backend application.
+
+This approach reduces backend workload and prevents requests from being lost during traffic spikes.
+
+---
+
+## 2. Amazon SQS Acts as the Message Queue
+
+Amazon SQS temporarily stores incoming messages until they are processed.
+
+One advantage of SQS is that it completely decouples request handling from business processing. Even if thousands of requests arrive simultaneously, messages remain safely stored inside the queue and are processed one by one.
+
+---
+
+## 3. AWS Lambda Processes Messages Automatically
+
+Whenever a new message appears in the queue, AWS Lambda is automatically triggered.
+
+Lambda can perform business logic, validate data, save information into Amazon DynamoDB, or communicate with other AWS services without managing any servers.
+
+This serverless approach reduces operational costs because compute resources are used only when events occur.
+
+---
+
+## 4. Amazon CloudWatch Monitors the Entire System
+
+After Lambda finishes processing, logs and metrics are automatically sent to Amazon CloudWatch.
+
+CloudWatch allows developers to monitor application performance, detect errors, and create alarms when metrics such as processing time, error count, or resource utilization exceed predefined thresholds.
+
+CloudWatch Alarms can also trigger Amazon SNS to notify administrators through Email, SMS, or collaboration platforms such as Slack.
+
+---
+
+## Lessons Learned
+
+From studying this architecture, I learned that introducing a message queue significantly improves system reliability and scalability.
+
+Instead of processing every request immediately, components communicate through asynchronous events. This makes the system easier to scale, maintain, and recover from traffic spikes.
+
+The combination of Amazon SQS and AWS Lambda also follows modern cloud-native design principles by separating producers from consumers and enabling serverless event processing.
+
+---
+
+## Conclusion
+
+Amazon SQS and AWS Lambda provide an excellent example of an Event-Driven Architecture on AWS.
+
+By integrating Amazon API Gateway, Amazon SQS, AWS Lambda, Amazon DynamoDB, Amazon CloudWatch, and Amazon SNS, developers can build applications that are scalable, reliable, and easy to monitor.
+
+Learning this architecture helped me better understand how modern cloud applications handle asynchronous workloads and why Event-Driven Design has become one of the most widely adopted architectural patterns in AWS.

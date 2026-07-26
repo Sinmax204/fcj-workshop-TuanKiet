@@ -1,58 +1,41 @@
 ---
-title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký công việc Tuần 6"
+date: 2026-05-22
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 6
 
-### Mục tiêu tuần 6:
+* Hiểu các kiến thức cơ bản về Amazon CloudWatch.
+* Tìm hiểu cách giám sát tài nguyên và ứng dụng trên AWS.
+* Cấu hình CloudWatch Metrics, Logs và Alarms.
+* Thực hành giám sát Amazon EC2 và thiết lập thông báo.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Công việc thực hiện trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| ----- | --------- | ------------ | --------------- | ------------------ |
+| 1 | Tìm hiểu các khái niệm và tính năng chính của Amazon CloudWatch. | 22/05/2026 | 22/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 2 | Thực hành giám sát Amazon EC2 bằng CloudWatch Metrics. | 23/05/2026 | 23/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | Cấu hình CloudWatch Logs để thu thập và phân tích nhật ký hệ thống. | 24/05/2026 | 24/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | Tạo CloudWatch Alarms để theo dõi CPU Utilization và Memory Usage. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | Cấu hình Amazon SNS để gửi thông báo khi CloudWatch Alarm được kích hoạt. | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | Ôn tập kiến thức về Amazon CloudWatch và hoàn thành các bài thực hành (Lab). | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/ |
 
+### Kết quả đạt được
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu được kiến trúc và các tính năng chính của Amazon CloudWatch.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Giám sát thành công các tài nguyên AWS bằng CloudWatch Metrics.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Cấu hình CloudWatch Logs để thu thập và phân tích dữ liệu nhật ký.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Tạo CloudWatch Alarms để theo dõi hiệu năng và tình trạng hoạt động của hệ thống.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Thiết lập Amazon SNS để gửi thông báo khi có cảnh báo từ CloudWatch.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Nâng cao kỹ năng giám sát, phân tích và xử lý sự cố trên nền tảng AWS.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thành đầy đủ các bài thực hành (Lab) của Tuần 6.

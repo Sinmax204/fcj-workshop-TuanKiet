@@ -1,40 +1,43 @@
 ---
-title: "Nhật ký công việc"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký công việc Tuần 12"
+date: 2026-07-03
+weight: 12
 chapter: false
-pre: " <b> 1. </b> "
+pre: " <b> 1.12. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-**Trong trang này** bạn sẽ cần giới thiệu worklog của bạn **như thế nào**? Bạn hoàn thành chương trình trong vòng **bao nhiêu tuần**? Bạn **đã làm gì** trong các tuần đó?
 
 
-Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
+### Mục tiêu tuần 12:
 
-**Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
+* Hoàn thành dự án cuối kỳ của chương trình AWS Cloud Journey.
+* Tích hợp các dịch vụ AWS thành một hệ thống hoàn chỉnh.
+* Kiểm thử, tối ưu và hoàn thiện dự án.
+* Hoàn thành báo cáo thực tập và chuẩn bị thuyết trình.
 
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
+### Công việc thực hiện trong tuần:
 
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| ----- | --------- | ------------ | --------------- | ------------------ |
+| 1 | Rà soát yêu cầu dự án và hoàn thiện kiến trúc hệ thống. | 03/07/2026 | 03/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | Triển khai và tích hợp các dịch vụ AWS cho dự án cuối kỳ. | 04/07/2026 | 04/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | Kiểm thử các chức năng của hệ thống và khắc phục các lỗi phát sinh. | 05/07/2026 | 05/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | Tối ưu hiệu năng, bảo mật và cấu hình tài nguyên của hệ thống. | 06/07/2026 | 06/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | Hoàn thiện tài liệu kỹ thuật và báo cáo thực tập. | 07/07/2026 | 07/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | Trình bày dự án cuối kỳ, tiếp nhận góp ý và hoàn thành chương trình thực tập. | 08/07/2026 | 08/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
+### Kết quả đạt được tuần 12:
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+* Hoàn thành thành công dự án cuối kỳ của chương trình AWS Cloud Journey.
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+* Tích hợp nhiều dịch vụ AWS thành một hệ thống điện toán đám mây hoàn chỉnh.
 
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
+* Kiểm thử và tối ưu hệ thống để đảm bảo tính ổn định và hiệu năng.
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+* Nâng cao khả năng triển khai, quản lý và bảo mật hạ tầng trên AWS.
 
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
+* Hoàn thành tài liệu kỹ thuật và báo cáo thực tập.
 
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
+* Trình bày thành công dự án cuối kỳ và tiếp nhận các ý kiến đánh giá.
 
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
-
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+* Hoàn thành đầy đủ các yêu cầu của chương trình thực tập.

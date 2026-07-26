@@ -1,59 +1,43 @@
 ---
-title: "Worklog Tuần 11"
-date: 2024-01-01
-weight: 2
+title: "Nhật ký công việc Tuần 11"
+date: 2026-06-26
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu các kiến thức cơ bản về Amazon Route 53 và Elastic Load Balancing (ELB).
+* Tìm hiểu cách hoạt động của hệ thống DNS trên AWS.
+* Cấu hình Application Load Balancer (ALB) để tăng tính sẵn sàng của ứng dụng.
+* Tích hợp Route 53 với Elastic Load Balancing.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện trong tuần:
 
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| ----- | --------- | ------------ | --------------- | ------------------ |
+| 1 | Tìm hiểu các khái niệm về DNS, Amazon Route 53 và Elastic Load Balancing. | 26/06/2026 | 26/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | Tạo và cấu hình Hosted Zone cùng các bản ghi DNS trong Amazon Route 53. | 27/06/2026 | 27/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | Tạo Application Load Balancer (ALB) và cấu hình Target Group. | 28/06/2026 | 28/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | Đăng ký các Amazon EC2 Instance vào Load Balancer và kiểm tra khả năng phân phối lưu lượng. | 29/06/2026 | 29/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | Tích hợp Amazon Route 53 với Application Load Balancer và kiểm tra định tuyến DNS. | 30/06/2026 | 30/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | Ôn tập Amazon Route 53, Elastic Load Balancing và hoàn thành các bài thực hành (Lab). | 01/07/2026 | 01/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu được kiến trúc và các khái niệm cốt lõi của Amazon Route 53 và Elastic Load Balancing.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tạo thành công Hosted Zone và các bản ghi DNS.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Cấu hình Application Load Balancer cùng Target Group.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Đăng ký các Amazon EC2 Instance và kiểm tra hoạt động cân bằng tải.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Tích hợp Amazon Route 53 với Elastic Load Balancing để định tuyến DNS.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Nâng cao kỹ năng triển khai hệ thống có tính sẵn sàng cao và phân phối lưu lượng trên AWS.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thành đầy đủ các bài thực hành (Lab) của Tuần 11.
